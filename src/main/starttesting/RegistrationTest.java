@@ -53,7 +53,7 @@ public class RegistrationTest {
         WebElement inputPassword = driver.findElement(By.xpath("//input[@id='password']"));
         inputPassword.click();
         inputPassword.clear();
-        inputPassword.sendKeys("Qwer!ty!1");
+        inputPassword.sendKeys("Qwerty!1");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.querySelector('#terms-of-use').click()");
