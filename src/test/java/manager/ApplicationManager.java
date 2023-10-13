@@ -10,8 +10,7 @@ public class ApplicationManager {
     WebDriver driver;
     UserHelper userHelper;
 
-
-    public void init(){
+    public void init() {
         driver = new ChromeDriver();
         driver.navigate().to("https://ilcarro.web.app/search");
         driver.manage().window().maximize();
@@ -20,12 +19,12 @@ public class ApplicationManager {
         userHelper = new UserHelper(driver);
     }
 
-  public UserHelper getUserHelper(){
+    public UserHelper getUserHelper() {
         return userHelper;
-  }
+    }
 
-    public void tearDown(){
-
+    public void tearDown() {
         driver.quit();
     }
+
 }
