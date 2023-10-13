@@ -19,4 +19,10 @@ public class BaseTest {
         app.tearDown();
     }
 
+    public void logoutIfLogin(){
+        if(app.getUserHelper().btnLogoutExist()){
+           app.getUserHelper().logout();
+       }
+    }
+
 }

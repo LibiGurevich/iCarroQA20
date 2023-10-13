@@ -4,9 +4,27 @@ import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginTests extends BaseTest{
+
+    @BeforeTest
+    public void preconditionsLogin(){
+        logoutIfLogin();
+        // user login
+        //user open
+//        if(app.getUserHelper().btnLogoutExist()){
+//            app.getUserHelper().logout();
+//        }
+    }
+
+    @AfterTest
+    public void postconditionsLogin(){
+        app.getUserHelper().clickOkPopUpSuccessLogin();
+    }
 
     @Test
     public void positiveLoginUserDTO() {
@@ -32,5 +50,25 @@ public class LoginTests extends BaseTest{
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+    }
+
+    @Test
+    public void negativePasswordWithoutSymbol() {
+        UserDtoLombok userDtoLombok = UserDtoLombok.builder()
+                .email("testqa20@gmail.com")
+                .password("123456Aa")
+                .build();
+        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
+    }
+
+    @Test
+    public void negativePasswordWithoutLetters() {
+        UserDtoLombok userDtoLombok = UserDtoLombok.builder()
+                .email("testqa20@gmail.com")
+                .password("12345697@")
+                .build();
+        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 }

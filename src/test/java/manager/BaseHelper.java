@@ -23,6 +23,10 @@ public class BaseHelper {
         return driver.findElements(locator);
     }
 
+    public boolean isElementExist(By locator){
+        return findElementsBase(locator).size() > 0;
+    }
+
     public void clickBase(By locator) {
         WebElement el = findElementBase(locator);
         el.click();
@@ -72,5 +76,6 @@ public class BaseHelper {
 //        Actions actions = new Actions(driver);
 //        actions.moveByOffset(x,y).click().perform();
     }
+
 
 }
