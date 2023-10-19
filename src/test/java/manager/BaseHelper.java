@@ -2,10 +2,14 @@ package manager;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class BaseHelper {
+
+    Logger logger = LoggerFactory.getLogger(BaseHelper.class);
 
     WebDriver driver;
 
@@ -62,19 +66,17 @@ public class BaseHelper {
         js.executeScript(locator);
     }
 
-    public void clickByXY(By locator, int down, int right) {
+    public void clickByXY(By locator, double down, int right) {
         Rectangle rect = findElementBase(locator).getRect();
         int x = rect.getX() + (rect.getWidth() / right);
-        int y = rect.getY() + (rect.getHeight() / down);
+        int y = (int)(rect.getY() + (rect.getHeight() / down));
         Actions actions = new Actions(driver);
         actions.moveByOffset(x, y).click().perform();
+    }
 
-//        Rectangle rectangle = findElementBase(locator).getRect();
-//        int x = rectangle.getX() + (rectangle.getWidth() / right);
-//        int y =  (rectangle.getY() + (rectangle.getHeight() / down));
-//
-//        Actions actions = new Actions(driver);
-//        actions.moveByOffset(x,y).click().perform();
+
+    public void refreshPage() {
+        driver.navigate().refresh();;
     }
 
 

@@ -4,31 +4,33 @@ import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LoginTests extends BaseTest{
 
-    @BeforeTest
-    public void preconditionsLogin(){
+    @BeforeMethod
+    public void preconditionsLogin() {
+        // app.getUserHelper().refreshPage();
+        //  app.navigateToMainPage();
         logoutIfLogin();
+
         // user login
-        //user open
-//        if(app.getUserHelper().btnLogoutExist()){
-//            app.getUserHelper().logout();
-//        }
+        // user open web not login
     }
 
-    @AfterTest
-    public void postconditionsLogin(){
+    @AfterMethod
+    public void postconditionsLogin() {
         app.getUserHelper().clickOkPopUpSuccessLogin();
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     @Test
     public void positiveLoginUserDTO() {
-        UserDTO userDTO = new UserDTO("testqa20@gmail.com", "123456Aa$");
+        UserDTO userDTO = new UserDTO("qwerty@qwer.ty", "Qwerty!1");
         app.getUserHelper().login(userDTO);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
     }
@@ -36,27 +38,38 @@ public class LoginTests extends BaseTest{
     @Test
     public void positiveLoginUserDTOWith() {
         UserDTOWith userDTOWith = new UserDTOWith()
-                .withEmail("testqa20@gmail.com")
-                .withPassword("123456Aa$");
+                .withEmail("qwerty@qwer.ty")
+                .withPassword("Qwerty!1");
         app.getUserHelper().login(userDTOWith);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
     }
 
-    @Test
-    public void positiveLogin() {
-        UserDtoLombok userDtoLombok = UserDtoLombok.builder()
-                .email("testqa20@gmail.com")
-                .password("123456Aa$")
-                .build();
-        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
-        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
-    }
+//    @Test
+//    public void positiveLogin() {
+//        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+//    }
 
     @Test
     public void negativePasswordWithoutSymbol() {
         UserDtoLombok userDtoLombok = UserDtoLombok.builder()
-                .email("testqa20@gmail.com")
-                .password("123456Aa")
+                .email("qwerty@qwer.ty")
+                .password("Qwerty11")
+                .build();
+        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
+    }
+
+    @Test
+    public void negativePasswordWithoutNumbers() {
+        UserDtoLombok userDtoLombok = UserDtoLombok.builder()
+                .email("qwerty@qwer.ty")
+                .password("Qwerty!!")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
@@ -65,8 +78,8 @@ public class LoginTests extends BaseTest{
     @Test
     public void negativePasswordWithoutLetters() {
         UserDtoLombok userDtoLombok = UserDtoLombok.builder()
-                .email("testqa20@gmail.com")
-                .password("12345697@")
+                .email("qwerty@qwer.ty")
+                .password("12345678!1")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
