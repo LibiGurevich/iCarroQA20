@@ -61,6 +61,16 @@ public class BaseHelper {
         }
     }
 
+    public boolean isTextContainsGet2Strings(String expectedResult, String actualResult) {
+        if(actualResult.contains(expectedResult)) {
+            return true;
+        } else {
+            System.out.println("expected result: " + expectedResult +
+                    "actual result: " + actualResult);
+            return false;
+        }
+    }
+
     public void jsClickBase(String locator) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript(locator);
@@ -75,9 +85,6 @@ public class BaseHelper {
     }
 
 
-    public void refreshPage() {
-        driver.navigate().refresh();;
-    }
 
 
 }

@@ -1,0 +1,5 @@
+2023-10-26 16:38:16,687 INFO m.ApplicationManager [ApplicationManager.java:26] navigated to the url: https://ilcarro.web.app/search
+2023-10-26 16:38:16,693 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 16:39:16,938 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationBlankEmail
+2023-10-26 16:39:16,943 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationBlankEmail
+2023-10-26 16:39:16,946 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationBlankEmail

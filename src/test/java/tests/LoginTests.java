@@ -8,31 +8,36 @@ import org.testng.annotations.*;
 
 public class LoginTests extends BaseTest{
 
-    @BeforeMethod
-    public void preconditionsLogin() {
-        // app.getUserHelper().refreshPage();
-        //  app.navigateToMainPage();
-        logoutIfLogin();
+    @BeforeClass(alwaysRun = true)
+    public void preconditionsBeforeClass(){
+        if(app.ispageUrlHome()){
+            app.getUserHelper().openLoginPage();
+        }
 
-        // user login
-        // user open web not login
     }
 
-    @AfterMethod
-    public void postconditionsLogin() {
-        app.getUserHelper().clickOkPopUpSuccessLogin();
-//        try {
-//            Thread.sleep(2000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
+    @AfterMethod(alwaysRun = true)
+    public void preconditionsBeforeMethod() {
+        preconditionForLoginAndRegTests();
     }
+
+//    @AfterMethod(alwaysRun = true)
+//    public void postconditionsLogin() {
+//        app.getUserHelper().clickOkPopUpSuccessLogin();
+////        try {
+////            Thread.sleep(2000);
+////        } catch (InterruptedException e) {
+////            throw new RuntimeException(e);
+////        }
+//    }
 
     @Test
     public void positiveLoginUserDTO() {
         UserDTO userDTO = new UserDTO("qwerty@qwer.ty", "Qwerty!1");
         app.getUserHelper().login(userDTO);
+        flagIsUserLogin = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+
     }
 
     @Test
@@ -41,7 +46,9 @@ public class LoginTests extends BaseTest{
                 .withEmail("qwerty@qwer.ty")
                 .withPassword("Qwerty!1");
         app.getUserHelper().login(userDTOWith);
+        flagIsUserLogin = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+
     }
 
 //    @Test
@@ -62,6 +69,7 @@ public class LoginTests extends BaseTest{
                 .password("Qwerty11")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        flagIsAlertPresent = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 
@@ -72,6 +80,7 @@ public class LoginTests extends BaseTest{
                 .password("Qwerty!!")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        flagIsAlertPresent = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 
@@ -82,6 +91,7 @@ public class LoginTests extends BaseTest{
                 .password("12345678!1")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
+        flagIsAlertPresent = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 }

@@ -18,6 +18,9 @@ import java.lang.reflect.Method;
 public class BaseTest {
 
     Logger logger = LoggerFactory.getLogger(BaseTest.class);
+
+    boolean flagIsAlertPresent = false;
+    boolean flagIsUserLogin = false;
     static ApplicationManager app = new ApplicationManager();
     RandomUtils randomUtils = new RandomUtils();
 
@@ -26,12 +29,12 @@ public class BaseTest {
             .password("123456Aa$")
             .build();
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setup() {
-        app.init();
+        app.init ();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void stop() {
         app.tearDown();
     }
@@ -43,14 +46,25 @@ public class BaseTest {
     }
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void loggerBe4Method(Method method){
         logger.info("start method: " + method.getName());
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void loggerAfterMethod(Method method){
         logger.info("stop method: " + method.getName());
+    }
+
+    public void preconditionForLoginAndRegTests() {
+        if(flagIsAlertPresent) {
+            flagIsAlertPresent = false;
+            app.getUserHelper().refreshPage();
+        }
+        if (flagIsUserLogin) {
+            flagIsUserLogin = false;
+            logoutIfLogin();
+        }
     }
 
 }

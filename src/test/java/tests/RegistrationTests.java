@@ -2,26 +2,33 @@ package tests;
 
 import dto.UserDtoLombok;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class RegistrationTests extends BaseTest{
 
-    @BeforeTest
-    public void preconditionsLogin() {
-        //  app.navigateToMainPage();
-        logoutIfLogin();
-
-        // user login
-        // user open web not login
+    @BeforeClass(alwaysRun = true)
+    public void preconditionsBeforeClass() {
+        if(app.ispageUrlHome()) {
+            app.getUserHelper().openRegistrationPage();
+        }
     }
 
-    @AfterTest
-    public void postconditionsLogin() {
-        app.getUserHelper().clickOkPopUpSuccessLogin();
+
+//    @BeforeTest(alwaysRun = true)
+//    public void preconditionsLogin() {
+//        //  app.navigateToMainPage();
+//        logoutIfLogin();
+//
+//        // user login
+//        // user open web not login
+//    }
+
+    @AfterMethod(alwaysRun = true)
+    public void preconditionsBeforeMethod() {
+        preconditionForLoginAndRegTests();
     }
+
+
 
     @Test
     public void positiveRegistration() {
@@ -35,7 +42,9 @@ public class RegistrationTests extends BaseTest{
                 .build();
 
         app.getUserHelper().fillRegistrationForm(user);
+
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterRegistration());
+        app.getUserHelper().clickOkPopUpSuccessLogin();
     }
 
     @Test

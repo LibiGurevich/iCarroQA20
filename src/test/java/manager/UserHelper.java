@@ -27,7 +27,7 @@ public class UserHelper extends BaseHelper{
     String btnRegNewUser = "document.querySelector('#terms-of-use').click();";
     String btnOkPopUpStr = "document.querySelector(`[type='button']`).click();";
     By checkBoxReg = By.xpath("//label[@for='terms-of-use']");
-    By btnUallaReg = By.xpath("//button[@type='submit']");
+    By btnYallaReg = By.xpath("//button[@type='submit']");
     By textPopUpSuccessRegH1 = By.xpath("//div[@class='dialog-container']//h1[@class='title']");
     By btnLogout = By.xpath("//a[contains(@href, 'logout')]");
     By btnOkPopUp = By.xpath("//button[@type='button']");
@@ -35,24 +35,32 @@ public class UserHelper extends BaseHelper{
     By errorMessageIncorrectPasswordReg = By.xpath("//input[@autocomplete='new-password']/..//div//div");
 
     public void login(UserDTO userDTO) {
-        clickBase(btnLoginNavigatorMenu);
+       // clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, userDTO.getEmail());
         typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
         clickBase(btnYallaLoginForm);
     }
 
     public void login(UserDTOWith userDTO) {
-        clickBase(btnLoginNavigatorMenu);
+      //  clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, userDTO.getEmail());
         typeTextBase(inputPasswordLoginForm, userDTO.getPassword());
         clickBase(btnYallaLoginForm);
     }
 
     public void loginUserDtoLombok(UserDtoLombok user) {
-        clickBase(btnLoginNavigatorMenu);
+      //  clickBase(btnLoginNavigatorMenu);
         typeTextBase(inputEmailLoginForm, user.getEmail());
         typeTextBase(inputPasswordLoginForm, user.getPassword());
         clickBase(btnYallaLoginForm);
+    }
+
+    public void openLoginPage() {
+        clickBase(btnLoginNavigatorMenu);
+    }
+
+    public void openRegistrationPage(){
+        clickBase(btnOpenRegForm);
     }
 
     public boolean validatePopUpMessageSuccessAfterLogin() {
@@ -60,11 +68,11 @@ public class UserHelper extends BaseHelper{
     }
 
     public boolean validatePopUpMessageLoginIncorrect() {
-        return isTextEqual(textSuccessLoginPopUp, "\"Login or Password incorrect\"");
+        return isTextContainsGet2Strings(String.valueOf(errorMessageWrongEmailReg), "Login or Password incorrect");
     }
 
     public void fillRegistrationForm(UserDtoLombok user) {
-        clickBase(btnOpenRegForm);
+       clickBase(btnOpenRegForm);
         typeTextBase(inputNameReg, user.getName());
         typeTextBase(inputLastNameReg, user.getLastName());
         typeTextBase(inputEmailReg, user.getEmail());
@@ -72,7 +80,7 @@ public class UserHelper extends BaseHelper{
         //clickBase(checkBoxReg);
         clickByXY(checkBoxReg, 5,15);
         //jsClickBase(btnRegNewUser);
-        clickBase(btnUallaReg);
+        clickBase(btnYallaReg);
     }
 
     public boolean validatePopUpMessageSuccessAfterRegistration() {
@@ -118,4 +126,9 @@ public class UserHelper extends BaseHelper{
     public boolean validateErrorEmptyEmailReg() {
         return isTextEqual(errorMessageWrongEmailReg, "Email is required");
     }
+
+    public void refreshPage() {
+        driver.navigate().refresh();;
+    }
+
 }

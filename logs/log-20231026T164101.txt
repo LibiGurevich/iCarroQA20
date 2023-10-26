@@ -1,0 +1,2 @@
+2023-10-26 16:41:06,855 INFO m.ApplicationManager [ApplicationManager.java:26] navigated to the url: https://ilcarro.web.app/search
+2023-10-26 16:41:06,862 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
