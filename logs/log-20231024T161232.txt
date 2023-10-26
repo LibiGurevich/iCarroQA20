@@ -1,0 +1,5 @@
+2023-10-24 16:12:35,802 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-24 16:12:35,951 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveRegistration
+2023-10-24 16:12:35,952 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveRegistration
+2023-10-24 16:12:35,958 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[]]
+2023-10-24 16:12:35,959 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

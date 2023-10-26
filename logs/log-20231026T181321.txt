@@ -1,0 +1,21 @@
+2023-10-26 18:13:24,115 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 18:13:25,698 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 18:13:25,863 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 18:13:26,203 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationBlankEmail
+2023-10-26 18:13:26,205 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationBlankEmail
+2023-10-26 18:13:26,208 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationBlankEmail
+2023-10-26 18:13:27,958 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeRegistrationBlankEmail
+2023-10-26 18:13:38,602 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationWrongEmail
+2023-10-26 18:13:38,604 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationWrongEmail
+2023-10-26 18:13:38,606 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationWrongEmail
+2023-10-26 18:13:40,015 INFO m.TestNGListener [TestNGListener.java:27] test failure: negativeRegistrationWrongEmail
+2023-10-26 18:13:50,797 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationWrongPassword
+2023-10-26 18:13:50,798 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationWrongPassword
+2023-10-26 18:13:50,800 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationWrongPassword
+2023-10-26 18:13:52,076 INFO m.TestNGListener [TestNGListener.java:27] test failure: negativeRegistrationWrongPassword
+2023-10-26 18:14:02,749 INFO t.BaseTest [BaseTest.java:53] stop method: positiveRegistration
+2023-10-26 18:14:02,753 INFO t.BaseTest [BaseTest.java:48] start method: positiveRegistration
+2023-10-26 18:14:02,756 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveRegistration
+2023-10-26 18:14:03,851 INFO m.TestNGListener [TestNGListener.java:27] test failure: positiveRegistration
+2023-10-26 18:14:14,403 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=negativeRegistrationBlankEmail status=SUCCESS method=RegistrationTests.negativeRegistrationBlankEmail()[pri:0, instance:tests.RegistrationTests@fba92d3] output={null}]]]
+2023-10-26 18:14:14,404 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[[TestResult name=negativeRegistrationWrongPassword status=FAILURE method=RegistrationTests.negativeRegistrationWrongPassword()[pri:0, instance:tests.RegistrationTests@fba92d3] output={null}], [TestResult name=negativeRegistrationWrongEmail status=FAILURE method=RegistrationTests.negativeRegistrationWrongEmail()[pri:0, instance:tests.RegistrationTests@fba92d3] output={null}], [TestResult name=positiveRegistration status=FAILURE method=RegistrationTests.positiveRegistration()[pri:0, instance:tests.RegistrationTests@fba92d3] output={null}]]]

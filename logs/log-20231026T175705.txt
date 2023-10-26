@@ -1,0 +1,21 @@
+2023-10-26 17:57:08,995 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 17:57:09,308 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 17:57:10,884 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 17:57:11,191 INFO t.BaseTest [BaseTest.java:53] stop method: negativePasswordWithoutLetters
+2023-10-26 17:57:11,194 INFO t.BaseTest [BaseTest.java:48] start method: negativePasswordWithoutLetters
+2023-10-26 17:57:21,287 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutLetters
+2023-10-26 17:57:22,038 INFO m.TestNGListener [TestNGListener.java:27] test failure: negativePasswordWithoutLetters
+2023-10-26 17:57:22,107 INFO t.BaseTest [BaseTest.java:53] stop method: negativePasswordWithoutNumbers
+2023-10-26 17:57:22,112 INFO t.BaseTest [BaseTest.java:48] start method: negativePasswordWithoutNumbers
+2023-10-26 17:57:32,194 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutNumbers
+2023-10-26 17:57:32,195 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativePasswordWithoutNumbers
+2023-10-26 17:57:32,230 INFO t.BaseTest [BaseTest.java:53] stop method: negativePasswordWithoutSymbol
+2023-10-26 17:57:32,233 INFO t.BaseTest [BaseTest.java:48] start method: negativePasswordWithoutSymbol
+2023-10-26 17:57:42,307 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutSymbol
+2023-10-26 17:57:42,308 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativePasswordWithoutSymbol
+2023-10-26 17:57:42,356 INFO t.BaseTest [BaseTest.java:53] stop method: positiveLoginUserDTO
+2023-10-26 17:57:42,358 INFO t.BaseTest [BaseTest.java:48] start method: positiveLoginUserDTO
+2023-10-26 17:57:52,428 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDTO
+2023-10-26 17:57:52,428 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDTO
+2023-10-26 17:57:52,460 INFO t.BaseTest [BaseTest.java:53] stop method: positiveLoginUserDTOWith
+2023-10-26 17:57:52,464 INFO t.BaseTest [BaseTest.java:48] start method: positiveLoginUserDTOWith

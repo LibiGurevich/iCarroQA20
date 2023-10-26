@@ -1,0 +1,9 @@
+2023-10-26 18:08:50,957 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 18:08:52,597 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 18:08:52,777 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 18:08:53,053 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationWrongPassword
+2023-10-26 18:08:53,056 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationWrongPassword
+2023-10-26 18:08:53,073 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationWrongPassword
+2023-10-26 18:08:54,765 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeRegistrationWrongPassword
+2023-10-26 18:09:05,391 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=negativeRegistrationWrongPassword status=SUCCESS method=RegistrationTests.negativeRegistrationWrongPassword()[pri:0, instance:tests.RegistrationTests@fba92d3] output={null}]]]
+2023-10-26 18:09:05,392 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

@@ -1,0 +1,9 @@
+2023-10-26 17:37:19,492 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 17:37:19,844 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 17:37:21,615 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 17:38:22,016 INFO t.BaseTest [BaseTest.java:53] stop method: positiveRegistration
+2023-10-26 17:38:22,019 INFO t.BaseTest [BaseTest.java:48] start method: positiveRegistration
+2023-10-26 17:38:22,021 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveRegistration
+2023-10-26 17:38:25,021 INFO m.TestNGListener [TestNGListener.java:21] test success: positiveRegistration
+2023-10-26 17:38:25,809 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=positiveRegistration status=SUCCESS method=RegistrationTests.positiveRegistration()[pri:0, instance:tests.RegistrationTests@662b4c69] output={null}]]]
+2023-10-26 17:38:25,809 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

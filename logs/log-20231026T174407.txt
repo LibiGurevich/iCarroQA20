@@ -1,0 +1,3 @@
+2023-10-26 17:44:10,760 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 17:44:12,356 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 17:44:12,535 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test

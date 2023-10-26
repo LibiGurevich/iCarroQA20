@@ -1,0 +1,9 @@
+2023-10-26 17:32:38,165 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-26 17:32:39,755 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-26 17:32:39,932 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-26 17:33:40,384 INFO t.BaseTest [BaseTest.java:53] stop method: negativeRegistrationWrongEmail
+2023-10-26 17:33:40,388 INFO t.BaseTest [BaseTest.java:48] start method: negativeRegistrationWrongEmail
+2023-10-26 17:33:40,389 INFO m.TestNGListener [TestNGListener.java:15] started test: negativeRegistrationWrongEmail
+2023-10-26 17:33:42,263 INFO m.TestNGListener [TestNGListener.java:21] test success: negativeRegistrationWrongEmail
+2023-10-26 17:34:42,348 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=negativeRegistrationWrongEmail status=SUCCESS method=RegistrationTests.negativeRegistrationWrongEmail()[pri:0, instance:tests.RegistrationTests@662b4c69] output={null}]]]
+2023-10-26 17:34:42,350 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]
