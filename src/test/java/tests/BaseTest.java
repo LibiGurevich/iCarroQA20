@@ -3,6 +3,8 @@ package tests;
 import dto.UserDtoLombok;
 import manager.ApplicationManager;
 import manager.TestNGListener;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterSuite;
@@ -56,15 +58,16 @@ public class BaseTest {
         logger.info("stop method: " + method.getName());
     }
 
-    public void preconditionForLoginAndRegTests() {
+    public void preconditionForLoginAndRegTests() throws InterruptedException {
         if(flagIsAlertPresent) {
             flagIsAlertPresent = false;
-            app.getUserHelper().refreshPage();
+            app.getUserHelper().clickOkPopUpNotLogin();
         }
         if (flagIsUserLogin) {
             flagIsUserLogin = false;
-            logoutIfLogin();
+            app.getUserHelper().logout2();
+            }
+           // logoutIfLogin();
         }
     }
 
-}

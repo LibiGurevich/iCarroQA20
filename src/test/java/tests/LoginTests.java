@@ -1,8 +1,11 @@
 package tests;
 
+import data.DataProviderLogin;
 import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -13,13 +16,21 @@ public class LoginTests extends BaseTest{
         if(app.ispageUrlHome()){
             app.getUserHelper().openLoginPage();
         }
-
     }
 
     @AfterMethod(alwaysRun = true)
-    public void preconditionsBeforeMethod() {
-        preconditionForLoginAndRegTests();
+    public void preconditionsBeforeMethod() throws InterruptedException {
+Thread.sleep(1000);
+            preconditionForLoginAndRegTests();
+
     }
+
+//    @AfterTest
+//    public void postconditions(){
+//
+//        logoutIfLogin();
+//
+//    }
 
 //    @AfterMethod(alwaysRun = true)
 //    public void postconditionsLogin() {
@@ -51,16 +62,16 @@ public class LoginTests extends BaseTest{
 
     }
 
-//    @Test
-//    public void positiveLogin() {
-//        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            throw new RuntimeException(e);
-//        }
-//        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
-//    }
+    @Test(dataProvider = "logInReg", dataProviderClass = DataProviderLogin.class)
+    public void positiveLogin(UserDtoLombok userDP) {
+        app.getUserHelper().loginUserDtoLombok(userDP);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+    }
 
     @Test
     public void negativePasswordWithoutSymbol() {

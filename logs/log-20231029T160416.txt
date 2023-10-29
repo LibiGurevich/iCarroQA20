@@ -1,0 +1,9 @@
+2023-10-29 16:04:19,812 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-29 16:04:21,617 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-29 16:04:21,802 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-29 16:04:22,074 INFO t.BaseTest [BaseTest.java:58] stop method: positiveLoginUserDTOWith
+2023-10-29 16:04:22,075 INFO t.BaseTest [BaseTest.java:53] start method: positiveLoginUserDTOWith
+2023-10-29 16:04:22,077 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDTOWith
+2023-10-29 16:04:24,099 INFO m.TestNGListener [TestNGListener.java:21] test success: positiveLoginUserDTOWith
+2023-10-29 16:04:27,302 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[[TestResult name=positiveLoginUserDTOWith status=SUCCESS method=LoginTests.positiveLoginUserDTOWith()[pri:0, instance:tests.LoginTests@4efc180e] output={null}]]]
+2023-10-29 16:04:27,302 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

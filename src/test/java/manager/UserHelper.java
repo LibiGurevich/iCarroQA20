@@ -6,7 +6,12 @@ import dto.UserDtoLombok;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Instant.*;
 
 public class UserHelper extends BaseHelper{
 
@@ -29,8 +34,13 @@ public class UserHelper extends BaseHelper{
     By checkBoxReg = By.xpath("//label[@for='terms-of-use']");
     By btnYallaReg = By.xpath("//button[@type='submit']");
     By textPopUpSuccessRegH1 = By.xpath("//div[@class='dialog-container']//h1[@class='title']");
-    By btnLogout = By.xpath("//a[contains(@href, 'logout')]");
+   // By btnLogout = By.xpath("//a[contains(@href, 'logout')]");
+
+    By btnLogout = By.xpath("//a[@ng-reflect-query-params='[object Object]']");
     By btnOkPopUp = By.xpath("//button[@type='button']");
+    By btnNotOkPopUp = By.xpath("//button[text()='Ok']");
+
+    By errorMessageWrongLogin = By.xpath("//h2[@class='message']");
     By errorMessageWrongEmailReg = By.xpath("//input[@autocomplete='email']/..//div//div");
     By errorMessageIncorrectPasswordReg = By.xpath("//input[@autocomplete='new-password']/..//div//div");
 
@@ -64,11 +74,11 @@ public class UserHelper extends BaseHelper{
     }
 
     public boolean validatePopUpMessageSuccessAfterLogin() {
-        return isTextEqual(textSuccessLoginPopUp, "Logged in success");
+        return isTextContainsGet2Strings("LOGGED IN SUCCESS", getTextBase(textSuccessLoginPopUp));
     }
 
     public boolean validatePopUpMessageLoginIncorrect() {
-        return isTextContainsGet2Strings(String.valueOf(errorMessageWrongEmailReg), "Login or Password incorrect");
+        return isTextContainsGet2Strings("LOGIN OR PASSWORD INCORRECT", getTextBase(errorMessageWrongLogin));
     }
 
     public void fillRegistrationForm(UserDtoLombok user) {
@@ -96,11 +106,26 @@ public class UserHelper extends BaseHelper{
         clickBase(btnLogout);
     }
 
+    public void logout2(){
+        WebDriverWait wait = new WebDriverWait(driver, 1000);
+        try {
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnLogout));
+            clickBase(btnLogout);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        } finally {
+            driver.quit();
+        }
+
+    }
+
     public void clickOkPopUpSuccessLogin() {
-        // clickBase(btnOkPopUp);
-        // typeTextBase(textPopUpSuccessRegH1, String.valueOf(Keys.ESCAPE));
-        jsClickBase(btnOkPopUpStr);
-        // clickByXY(btnOkPopUp, 0.5, 2);
+        clickBase(btnOkPopUp);
+       // typeTextBase(textPopUpSuccessRegH1, String.valueOf(Keys.ESCAPE));
+        //jsClickBase(btnOkPopUpStr);
+        //clickByXY(btnOkPopUp, 38, 503);
         //      clickBase(textPopUpSuccessRegH1);
 //        try {
 //            Thread.sleep(1000);
@@ -112,6 +137,11 @@ public class UserHelper extends BaseHelper{
 //        // Use the sendKeys method to simulate pressing the "Enter" key on the active element
 //        actions.sendKeys(Keys.TAB).perform();
 //        actions.sendKeys(Keys.ESCAPE).perform();
+    }
+
+    public void clickOkPopUpNotLogin() {
+        clickBase(btnNotOkPopUp);
+
     }
 
     public boolean validateMessageIncorrectEmailReg() {

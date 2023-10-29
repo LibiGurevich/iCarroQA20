@@ -25,7 +25,11 @@ public class RegistrationTests extends BaseTest{
 
     @AfterMethod(alwaysRun = true)
     public void preconditionsBeforeMethod() {
-        preconditionForLoginAndRegTests();
+        try {
+            preconditionForLoginAndRegTests();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
