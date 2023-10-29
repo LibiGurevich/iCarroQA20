@@ -1,0 +1,5 @@
+2023-10-29 16:51:15,633 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-29 16:51:18,040 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-29 16:51:18,197 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-29 16:51:18,475 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[]]
+2023-10-29 16:51:18,476 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]

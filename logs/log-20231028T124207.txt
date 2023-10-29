@@ -1,0 +1,9 @@
+2023-10-28 12:42:11,207 INFO m.ApplicationManager [ApplicationManager.java:32] created chrome browser
+2023-10-28 12:42:12,864 INFO m.ApplicationManager [ApplicationManager.java:39] open page: https://ilcarro.web.app/search
+2023-10-28 12:42:13,036 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-10-28 12:42:13,326 INFO t.BaseTest [BaseTest.java:56] stop method: negativePasswordWithoutSymbol
+2023-10-28 12:42:13,329 INFO t.BaseTest [BaseTest.java:51] start method: negativePasswordWithoutSymbol
+2023-10-28 12:42:13,330 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutSymbol
+2023-10-28 12:42:14,142 INFO m.TestNGListener [TestNGListener.java:27] test failure: negativePasswordWithoutSymbol
+2023-10-28 12:42:14,830 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[]]
+2023-10-28 12:42:14,832 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[[TestResult name=negativePasswordWithoutSymbol status=FAILURE method=LoginTests.negativePasswordWithoutSymbol()[pri:0, instance:tests.LoginTests@fba92d3] output={null}]]]
