@@ -61,7 +61,7 @@ public class DataProviderLogin {
     @DataProvider
     public Iterator<Object[]> loginCSV(){
         List<Object[]> list = new ArrayList<>();
-        String path = "src/test/java/resources/lohInReg.csv";
+        String path = "src/test/resources/logInReg.csv";
         try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))){
             String line = reader.readLine();
             while(line !=null){
