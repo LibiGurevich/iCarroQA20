@@ -1,6 +1,5 @@
 package manager;
 
-import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,16 +14,20 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 
     Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
-    static String browser;
-    EventFiringWebDriver driver;
-    @Getter
-    UserHelper userHelper;
 
+    //  WebDriver driver;
+    EventFiringWebDriver driver;
+
+    UserHelper userHelper;
+    CarHelper carHelper;
+    String browser;
+    String url = ConfigProperties.getProperty("url");
     public ApplicationManager() {
         browser = System.getProperty("browser", BrowserType.CHROME);
     }
 
     public void init() {
+        // driver = new ChromeDriver();
         // driver = new EventFiringWebDriver(new ChromeDriver());
 
         if(browser.equals(BrowserType.CHROME)) {
@@ -35,32 +38,35 @@ public class ApplicationManager {
             logger.info("started tests in firefox driver");
         }
 
-        driver.navigate().to(ConfigProperties.getProperty("url"));
-        logger.info("open page: " + ConfigProperties.getProperty("url"));
+        driver.navigate().to(url);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.register(new WDListener());
         userHelper = new UserHelper(driver);
+        carHelper = new CarHelper(driver);
+        logger.info("navigated to the url: " + url);
     }
 
+    public void navigateToMainPage() {
+        driver.navigate().to(url);
+    }
 
+    public UserHelper getUserHelper() {
+        return userHelper;
+    }
+    public CarHelper getCarHelper() {
+        return carHelper;
+    }
 
-
-
-
-//    public void navigateToMainPage() {
-//        driver.navigate().to("https://ilcarro.web.app/search");
-//    }
-
-
+    public EventFiringWebDriver getDriver() {
+        if(driver == null) {
+            init();
+        }
+        return driver;
+    }
 
     public void tearDown() {
         driver.quit();
     }
 
-    public boolean ispageUrlHome() {
-        String urlCurrent = driver.getCurrentUrl();
-        System.out.println(urlCurrent + "-------------------- url");
-        return urlCurrent.equals(ConfigProperties.getProperty("url"));
-    }
 }

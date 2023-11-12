@@ -1,0 +1,35 @@
+2023-11-12 17:23:39,450 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:23:41,850 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-12 17:23:44,610 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:23:47,368 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-12 17:23:49,718 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:23:51,944 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-12 17:23:54,969 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:23:57,547 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-12 17:24:00,238 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:24:05,771 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-12 17:24:08,253 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-12 17:24:10,188 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-11-12 17:24:10,669 INFO t.BaseTest [BaseTest.java:59] stop method: negativePasswordWithoutLetters
+2023-11-12 17:24:10,673 INFO t.BaseTest [BaseTest.java:54] start method: negativePasswordWithoutLetters
+2023-11-12 17:24:10,676 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutLetters
+2023-11-12 17:24:10,683 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativePasswordWithoutLetters
+2023-11-12 17:24:10,695 INFO t.BaseTest [BaseTest.java:59] stop method: negativePasswordWithoutNumbers
+2023-11-12 17:24:10,710 INFO t.BaseTest [BaseTest.java:54] start method: negativePasswordWithoutNumbers
+2023-11-12 17:24:10,711 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutNumbers
+2023-11-12 17:24:10,712 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativePasswordWithoutNumbers
+2023-11-12 17:24:10,748 INFO t.BaseTest [BaseTest.java:59] stop method: negativePasswordWithoutSymbol
+2023-11-12 17:24:10,751 INFO t.BaseTest [BaseTest.java:54] start method: negativePasswordWithoutSymbol
+2023-11-12 17:24:10,751 INFO m.TestNGListener [TestNGListener.java:15] started test: negativePasswordWithoutSymbol
+2023-11-12 17:24:10,752 INFO m.TestNGListener [TestNGListener.java:33] test skipped: negativePasswordWithoutSymbol
+2023-11-12 17:24:10,841 INFO m.TestNGListener [TestNGListener.java:27] test failure: positiveLogin
+2023-11-12 17:24:10,843 INFO t.BaseTest [BaseTest.java:59] stop method: positiveLoginUserDTO
+2023-11-12 17:24:10,852 INFO t.BaseTest [BaseTest.java:54] start method: positiveLoginUserDTO
+2023-11-12 17:24:10,855 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDTO
+2023-11-12 17:24:10,856 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDTO
+2023-11-12 17:24:10,860 INFO t.BaseTest [BaseTest.java:59] stop method: positiveLoginUserDTOWith
+2023-11-12 17:24:10,863 INFO t.BaseTest [BaseTest.java:54] start method: positiveLoginUserDTOWith
+2023-11-12 17:24:10,864 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDTOWith
+2023-11-12 17:24:10,865 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDTOWith
+2023-11-12 17:24:10,869 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[]]
+2023-11-12 17:24:10,870 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[[TestResult name=positiveLogin status=FAILURE method=LoginTests.positiveLogin(dto.UserDtoLombok)[pri:0, instance:tests.LoginTests@fba92d3] output={null}]]]

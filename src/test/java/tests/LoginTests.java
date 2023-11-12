@@ -4,105 +4,105 @@ import data.DataProviderLogin;
 import dto.UserDTO;
 import dto.UserDTOWith;
 import dto.UserDtoLombok;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class LoginTests extends BaseTest{
 
-    @BeforeClass(alwaysRun = true)
-    public void preconditionsBeforeClass(){
-        if(app.ispageUrlHome()){
-            app.getUserHelper().openLoginPage();
+    @AfterMethod
+    public void postconditionsLogin() {
+        if(flagPopUp) {
+            flagPopUp = false;
+            app.getUserHelper().clickOkPopUpSuccessLogin();
+        }
+        if(flagLogin) {
+            flagLogin = false;
+            app.getUserHelper().logout();
         }
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void preconditionsBeforeMethod() throws InterruptedException {
-Thread.sleep(1000);
-            preconditionForLoginAndRegTests();
-
-    }
-
-//    @AfterTest
-//    public void postconditions(){
-//
-//        logoutIfLogin();
-//
-//    }
-
-//    @AfterMethod(alwaysRun = true)
-//    public void postconditionsLogin() {
-//        app.getUserHelper().clickOkPopUpSuccessLogin();
-////        try {
-////            Thread.sleep(2000);
-////        } catch (InterruptedException e) {
-////            throw new RuntimeException(e);
-////        }
-//    }
-
-    @Test
+    @Test(priority = 1, invocationCount = 2)
     public void positiveLoginUserDTO() {
         UserDTO userDTO = new UserDTO("qwerty@qwer.ty", "Qwerty!1");
         app.getUserHelper().login(userDTO);
-        flagIsUserLogin = true;
-        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+        flagLogin = true;
+        flagPopUp = true;
 
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
     }
 
-    @Test
+    @Test(groups={"smoke"})
     public void positiveLoginUserDTOWith() {
         UserDTOWith userDTOWith = new UserDTOWith()
                 .withEmail("qwerty@qwer.ty")
                 .withPassword("Qwerty!1");
         app.getUserHelper().login(userDTOWith);
-        flagIsUserLogin = true;
-        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+        flagLogin = true;
+        flagPopUp = true;
 
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
     }
 
-    @Test(dataProvider = "logInReg", dataProviderClass = DataProviderLogin.class)
-    public void positiveLogin(UserDtoLombok userDP) {
-        app.getUserHelper().loginUserDtoLombok(userDP);
+    @Test(dataProvider = "loginCSV", dataProviderClass = DataProviderLogin.class, groups = {"smoke"})
+    public void positiveLogin(UserDtoLombok user) {
+        app.getUserHelper().loginUserDtoLombok(user);
+        flagLogin = true;
+        flagPopUp = true;
+
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+    }
+
+    @Test(dataProvider = "positiveDataLogin", dataProviderClass = DataProviderLogin.class)
+    public void positiveLogin2(UserDtoLombok user) {
+        app.getUserHelper().loginUserDtoLombok(user);
+        flagLogin = true;
+        flagPopUp = true;
+
+        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
+    }
+
+    @Test(dataProvider = "negativePasswordDataLogin", dataProviderClass = DataProviderLogin.class)
+    public void negativePasswordWithoutSymbol(UserDtoLombok user) {
+
+        app.getUserHelper().loginUserDtoLombok(user);
+        flagPopUp = true;
         try {
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        Assert.assertTrue(app.getUserHelper().validatePopUpMessageSuccessAfterLogin());
-    }
-
-    @Test
-    public void negativePasswordWithoutSymbol() {
-        UserDtoLombok userDtoLombok = UserDtoLombok.builder()
-                .email("qwerty@qwer.ty")
-                .password("Qwerty11")
-                .build();
-        app.getUserHelper().loginUserDtoLombok(userDtoLombok);
-        flagIsAlertPresent = true;
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 
-    @Test
+    @Test(priority = 5)
     public void negativePasswordWithoutNumbers() {
         UserDtoLombok userDtoLombok = UserDtoLombok.builder()
                 .email("qwerty@qwer.ty")
                 .password("Qwerty!!")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
-        flagIsAlertPresent = true;
+        flagPopUp = true;
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 
-    @Test
+    @Test(priority = 6)
     public void negativePasswordWithoutLetters() {
         UserDtoLombok userDtoLombok = UserDtoLombok.builder()
                 .email("qwerty@qwer.ty")
-                .password("12345678!1")
+                .password("12345678!")
                 .build();
         app.getUserHelper().loginUserDtoLombok(userDtoLombok);
-        flagIsAlertPresent = true;
+        flagPopUp = true;
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertTrue(app.getUserHelper().validatePopUpMessageLoginIncorrect());
     }
 }

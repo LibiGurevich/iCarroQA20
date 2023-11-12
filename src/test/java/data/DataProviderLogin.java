@@ -3,68 +3,59 @@ package data;
 import dto.UserDtoLombok;
 import org.testng.annotations.DataProvider;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class DataProviderLogin {
+
     @DataProvider
-    public Iterator<Object[]> positiveDataLogin(){
+    public Iterator<Object[]> positiveDataLogin() {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{
                 UserDtoLombok.builder()
                         .email("qwerty@qwer.ty")
-                        .password("12345678!1")
+                        .password("Qwerty!1")
                         .build()
         });
         list.add(new Object[]{
                 UserDtoLombok.builder()
                         .email("qwerty@qwer.ty")
-                        .password("12345678!1")
-                        .build()
-        });
-        list.add(new Object[]{
-                UserDtoLombok.builder()
-                        .email("qwerty@qwer.ty")
-                        .password("12345678!1")
+                        .password("Qwerty!1")
                         .build()
         });
         return list.iterator();
     }
 
     @DataProvider
-    public Iterator<Object[]> negativePasswordDataLogin(){
+    public Iterator<Object[]> negativePasswordDataLogin() {
         List<Object[]> list = new ArrayList<>();
         list.add(new Object[]{
                 UserDtoLombok.builder()
                         .email("qwerty@qwer.ty")
-                        .password("123456Aa88")
+                        .password("123456Q88")
                         .build()
         });
         list.add(new Object[]{
                 UserDtoLombok.builder()
                         .email("qwerty@qwer.ty")
-                        .password("123456AA$")
-                        .build()
-        });
-        list.add(new Object[]{
-                UserDtoLombok.builder()
-                        .email("qwerty@qwer.ty")
-                        .password("HHHHHHHAa$")
+                        .password("123456Qqq")
                         .build()
         });
         return list.iterator();
     }
 
     @DataProvider
-    public Iterator<Object[]> loginCSV(){
+    public Iterator<Object[]> loginCSV() {
         List<Object[]> list = new ArrayList<>();
-        String path = "src/test/resources/logInReg.csv";
-        try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))){
+        String path = "src/test/resources/datalogin.csv";
+        try(BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
             String line = reader.readLine();
-            while(line !=null){
+            while(line != null) {
                 String[] split = line.split(",");
                 list.add(new Object[]{
                         UserDtoLombok.builder()
@@ -74,7 +65,7 @@ public class DataProviderLogin {
                 });
                 line = reader.readLine();
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return list.iterator();
