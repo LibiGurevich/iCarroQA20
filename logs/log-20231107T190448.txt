@@ -1,0 +1,30 @@
+2023-11-07 19:04:55,918 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:04:57,883 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:00,179 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:00,484 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:04,308 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:06,188 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:08,474 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:10,283 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:13,566 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:15,928 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:20,616 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:24,326 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:30,213 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:33,334 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:37,140 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:40,618 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:45,831 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:49,477 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:05:53,295 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:05:55,709 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:06:01,543 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:06:03,965 INFO m.ApplicationManager [ApplicationManager.java:40] open page: https://ilcarro.web.app/search
+2023-11-07 19:06:09,139 INFO m.ApplicationManager [ApplicationManager.java:33] created chrome browser
+2023-11-07 19:06:10,057 INFO m.TestNGListener [TestNGListener.java:50] start test onstart: Gradle test
+2023-11-07 19:06:10,344 INFO t.BaseTest [BaseTest.java:59] stop method: positiveLoginUserDTOWith
+2023-11-07 19:06:10,346 INFO t.BaseTest [BaseTest.java:54] start method: positiveLoginUserDTOWith
+2023-11-07 19:06:10,349 INFO m.TestNGListener [TestNGListener.java:15] started test: positiveLoginUserDTOWith
+2023-11-07 19:06:10,352 INFO m.TestNGListener [TestNGListener.java:33] test skipped: positiveLoginUserDTOWith
+2023-11-07 19:06:10,364 INFO m.TestNGListener [TestNGListener.java:56] all code executed: [ResultMap map=[]]
+2023-11-07 19:06:10,365 INFO m.TestNGListener [TestNGListener.java:57] all code executed: [ResultMap map=[]]
